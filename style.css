@@ -1,7 +1,6 @@
 /* =========================================================
    PKFZ DIGITAL BUSINESS CARD
-   FULLY RESPONSIVE DESIGN
-   Mobile • Tablet • Laptop • Desktop
+   RESPONSIVE FOR ALL DEVICES
 ========================================================= */
 
 
@@ -17,25 +16,24 @@
 
 
 /* =========================================================
-   ROOT
+   VARIABLES
 ========================================================= */
 
 :root {
 
-    --pkfz-blue: #0878d1;
-    --pkfz-dark-blue: #073b78;
+    --blue: #0878d1;
 
-    --pkfz-green: #72bf44;
-    --pkfz-light-green: #a5d86e;
+    --dark-blue: #073b78;
 
-    --text-dark: #12345a;
-    --text-medium: #527092;
-    --text-light: #8ba1b8;
+    --green: #72bf44;
+
+    --light-blue: #eaf5ff;
+
+    --text: #123b66;
+
+    --muted: #66819d;
 
     --white: #ffffff;
-
-    --background:
-        #edf6ff;
 }
 
 
@@ -69,8 +67,7 @@ body {
 
     align-items: center;
 
-    padding:
-        clamp(12px, 3vw, 40px);
+    padding: clamp(10px, 3vw, 40px);
 
     font-family:
         Arial,
@@ -80,37 +77,36 @@ body {
     background:
 
         radial-gradient(
-            circle at 10% 15%,
-            rgba(114, 191, 68, 0.15),
-            transparent 25%
+            circle at 10% 10%,
+            rgba(8, 120, 209, 0.14),
+            transparent 27%
         ),
 
         radial-gradient(
-            circle at 90% 80%,
-            rgba(8, 120, 209, 0.18),
-            transparent 30%
+            circle at 90% 90%,
+            rgba(114, 191, 68, 0.14),
+            transparent 27%
         ),
 
         linear-gradient(
             135deg,
-            #f8fcff 0%,
-            #e8f4ff 50%,
-            #f7fbff 100%
+            #f8fcff,
+            #e8f4ff
         );
-
-    color: var(--text-dark);
 
     overflow-x: hidden;
 }
 
 
 /* =========================================================
-   BACKGROUND DECORATIVE SHAPES
+   BACKGROUND CIRCLES
 ========================================================= */
 
-.background-shape {
+.bg-circle {
 
     position: fixed;
+
+    border-radius: 50%;
 
     pointer-events: none;
 
@@ -118,62 +114,82 @@ body {
 }
 
 
-/* Blue shape */
+.bg-circle-blue {
 
-.shape-one {
+    width: clamp(180px, 30vw, 500px);
 
-    width:
-        clamp(180px, 30vw, 500px);
+    height: clamp(180px, 30vw, 500px);
 
-    height:
-        clamp(180px, 30vw, 500px);
+    top: -180px;
 
-    right:
-        clamp(-220px, -8vw, -80px);
-
-    top:
-        clamp(-180px, -8vw, -70px);
-
-    border-radius: 50%;
+    right: -130px;
 
     background:
-        linear-gradient(
-            135deg,
-            rgba(8, 120, 209, 0.18),
-            rgba(8, 120, 209, 0.02)
-        );
+        rgba(8, 120, 209, 0.10);
 }
 
 
-/* Green shape */
+.bg-circle-green {
 
-.shape-two {
+    width: clamp(140px, 25vw, 400px);
 
-    width:
-        clamp(150px, 25vw, 400px);
+    height: clamp(140px, 25vw, 400px);
 
-    height:
-        clamp(150px, 25vw, 400px);
+    bottom: -160px;
 
-    left:
-        clamp(-170px, -7vw, -50px);
-
-    bottom:
-        clamp(-150px, -7vw, -60px);
-
-    border-radius: 50%;
+    left: -120px;
 
     background:
-        linear-gradient(
-            135deg,
-            rgba(114, 191, 68, 0.18),
-            rgba(114, 191, 68, 0.02)
-        );
+        rgba(114, 191, 68, 0.10);
 }
 
 
 /* =========================================================
-   MAIN CARD
+   DECORATIVE CURVES
+========================================================= */
+
+.bg-curve {
+
+    position: fixed;
+
+    width: 500px;
+
+    height: 80px;
+
+    border-radius: 100%;
+
+    transform: rotate(-45deg);
+
+    pointer-events: none;
+
+    opacity: 0.15;
+
+    z-index: 0;
+}
+
+
+.curve-blue {
+
+    background: var(--blue);
+
+    right: -230px;
+
+    top: 42%;
+}
+
+
+.curve-green {
+
+    background: var(--green);
+
+    left: -230px;
+
+    bottom: 25%;
+}
+
+
+/* =========================================================
+   BUSINESS CARD
 ========================================================= */
 
 .business-card {
@@ -184,32 +200,15 @@ body {
 
     width: 100%;
 
-    /*
-       Never become too wide on desktop.
-       This keeps the business-card appearance.
-    */
-
-    max-width:
-        clamp(
-            360px,
-            88vw,
-            620px
-        );
-
-    min-height: 0;
+    max-width: 620px;
 
     padding:
         clamp(22px, 4vw, 42px)
         clamp(16px, 5vw, 48px)
-        clamp(22px, 4vw, 38px);
+        clamp(24px, 4vw, 40px);
 
     background:
-
-        linear-gradient(
-            145deg,
-            rgba(255, 255, 255, 0.96),
-            rgba(247, 252, 255, 0.91)
-        );
+        rgba(255, 255, 255, 0.94);
 
     border:
         1px solid rgba(255, 255, 255, 0.95);
@@ -220,7 +219,7 @@ body {
     box-shadow:
 
         0 30px 80px
-        rgba(18, 70, 120, 0.14),
+        rgba(18, 70, 120, 0.15),
 
         0 10px 30px
         rgba(18, 70, 120, 0.08);
@@ -245,16 +244,15 @@ body {
 
     width: 100%;
 
-    height:
-        clamp(4px, 0.6vw, 7px);
+    height: 6px;
 
     background:
 
         linear-gradient(
             90deg,
-            var(--pkfz-blue),
-            #25a7e8,
-            var(--pkfz-green)
+            var(--blue),
+            #1da8e8,
+            var(--green)
         );
 }
 
@@ -269,19 +267,18 @@ body {
 
     display: flex;
 
-    justify-content: space-between;
-
     align-items: center;
 
-    gap: 20px;
+    justify-content: space-between;
 
-    margin-bottom:
-        clamp(15px, 3vw, 28px);
+    gap: 18px;
+
+    margin-bottom: 25px;
 }
 
 
 /* =========================================================
-   PKFZ LOGO
+   LOGO CONTAINER
 ========================================================= */
 
 .company-brand {
@@ -290,26 +287,33 @@ body {
 
     align-items: center;
 
-    flex-shrink: 1;
+    justify-content: flex-start;
+
+    min-width: 0;
+
+    flex: 1;
 }
 
 
+/* =========================================================
+   PKFZ LOGO
+========================================================= */
+
 .pkfz-logo {
 
-    width:
-        clamp(
-            125px,
-            30vw,
-            230px
-        );
+    display: block;
+
+    width: 180px;
 
     height: auto;
 
-    max-height: 95px;
+    max-width: 100%;
+
+    max-height: 80px;
 
     object-fit: contain;
 
-    display: block;
+    object-position: left center;
 }
 
 
@@ -321,8 +325,7 @@ body {
 
     flex-shrink: 0;
 
-    padding-left:
-        clamp(10px, 2vw, 20px);
+    padding-left: 18px;
 
     border-left:
         2px solid
@@ -334,23 +337,20 @@ body {
 
     gap: 2px;
 
-    color:
-        var(--pkfz-dark-blue);
+    color: var(--dark-blue);
 
-    font-size:
-        clamp(7px, 1.2vw, 11px);
+    font-size: 10px;
 
     font-weight: 800;
 
-    letter-spacing:
-        clamp(1px, 0.3vw, 3px);
+    letter-spacing: 2px;
 
     line-height: 1.25;
 }
 
 
 /* =========================================================
-   PROFILE SECTION
+   PROFILE
 ========================================================= */
 
 .profile-section {
@@ -365,9 +365,7 @@ body {
 
     align-items: center;
 
-    margin:
-        0 auto
-        clamp(18px, 4vw, 28px);
+    margin-bottom: 28px;
 }
 
 
@@ -377,24 +375,21 @@ body {
 
 .profile-ring {
 
-    position: relative;
-
     width:
         clamp(
-            150px,
-            42vw,
+            155px,
+            40vw,
             265px
         );
 
     height:
         clamp(
-            150px,
-            42vw,
+            155px,
+            40vw,
             265px
         );
 
-    padding:
-        clamp(5px, 1vw, 8px);
+    padding: 7px;
 
     border-radius: 50%;
 
@@ -402,16 +397,16 @@ body {
 
         conic-gradient(
             from 210deg,
-            var(--pkfz-blue),
-            #1da8e8,
-            var(--pkfz-green),
-            var(--pkfz-blue)
+            var(--blue),
+            #20a8e8,
+            var(--green),
+            var(--blue)
         );
 
     box-shadow:
 
         0 15px 40px
-        rgba(8, 120, 209, 0.20);
+        rgba(8, 120, 209, 0.22);
 }
 
 
@@ -425,8 +420,7 @@ body {
 
     height: 100%;
 
-    padding:
-        clamp(3px, 0.8vw, 6px);
+    padding: 5px;
 
     border-radius: 50%;
 
@@ -464,11 +458,9 @@ body {
 
     position: absolute;
 
-    left:
-        clamp(0px, 2vw, 25px);
+    left: 0;
 
-    bottom:
-        clamp(10px, 2vw, 30px);
+    bottom: 12px;
 
     display: flex;
 
@@ -480,7 +472,7 @@ body {
         cursive;
 
     font-size:
-        clamp(14px, 2.8vw, 28px);
+        clamp(14px, 2.5vw, 27px);
 
     line-height: 1.05;
 
@@ -489,8 +481,6 @@ body {
 
     transform:
         rotate(-8deg);
-
-    pointer-events: none;
 }
 
 
@@ -500,12 +490,11 @@ body {
 
 .personal-information {
 
-    text-align: center;
-
     width: 100%;
 
-    margin-bottom:
-        clamp(18px, 4vw, 28px);
+    text-align: center;
+
+    margin-bottom: 24px;
 }
 
 
@@ -518,7 +507,7 @@ body {
     font-size:
         clamp(
             20px,
-            4.2vw,
+            4vw,
             34px
         );
 
@@ -526,11 +515,7 @@ body {
 
     font-weight: 800;
 
-    letter-spacing:
-        clamp(-0.5px, -0.05vw, 0px);
-
-    color:
-        var(--text-dark);
+    color: var(--text);
 
     overflow-wrap: break-word;
 }
@@ -551,8 +536,7 @@ body {
             23px
         );
 
-    color:
-        var(--pkfz-blue);
+    color: var(--blue);
 
     font-weight: 700;
 }
@@ -571,15 +555,14 @@ body {
     margin-top: 9px;
 
     padding:
-        7px 15px;
+        7px 16px;
 
     border-radius: 50px;
 
     background:
         rgba(8, 120, 209, 0.10);
 
-    color:
-        var(--text-dark);
+    color: var(--text);
 
     font-size:
         clamp(
@@ -607,10 +590,9 @@ body {
     flex-direction: column;
 
     gap:
-        clamp(8px, 1.5vw, 13px);
+        clamp(9px, 1.5vw, 13px);
 
-    margin-bottom:
-        clamp(15px, 3vw, 22px);
+    margin-bottom: 20px;
 }
 
 
@@ -637,10 +619,10 @@ body {
 
     text-decoration: none;
 
-    color: var(--text-dark);
+    color: var(--text);
 
     background:
-        rgba(255, 255, 255, 0.85);
+        rgba(255, 255, 255, 0.90);
 
     border:
         1px solid
@@ -650,7 +632,6 @@ body {
         clamp(13px, 2.5vw, 18px);
 
     box-shadow:
-
         0 5px 15px
         rgba(18, 70, 120, 0.05);
 
@@ -674,7 +655,6 @@ body {
         rgba(8, 120, 209, 0.25);
 
     box-shadow:
-
         0 12px 25px
         rgba(8, 120, 209, 0.10);
 }
@@ -709,7 +689,7 @@ body {
 
 
 /* =========================================================
-   SVG ICON
+   SVG
 ========================================================= */
 
 .contact-icon svg {
@@ -781,7 +761,7 @@ body {
 
 
 /* =========================================================
-   CONTACT TEXT
+   CONTACT CONTENT
 ========================================================= */
 
 .contact-content {
@@ -826,8 +806,7 @@ body {
 
     line-height: 1.3;
 
-    color:
-        var(--text-medium);
+    color: var(--muted);
 
     overflow-wrap: anywhere;
 }
@@ -846,11 +825,7 @@ body {
 
     font-weight: 300;
 
-    color:
-        #315b83;
-
-    transition:
-        transform 0.2s ease;
+    color: #315b83;
 }
 
 
@@ -907,7 +882,6 @@ body {
     cursor: pointer;
 
     box-shadow:
-
         0 12px 25px
         rgba(8, 120, 209, 0.24);
 
@@ -943,7 +917,6 @@ body {
         translateY(-3px);
 
     box-shadow:
-
         0 16px 30px
         rgba(8, 120, 209, 0.30);
 }
@@ -969,10 +942,6 @@ body {
 }
 
 
-/* =========================================================
-   FOOTER COMPANY
-========================================================= */
-
 .footer-company {
 
     font-size:
@@ -992,17 +961,13 @@ body {
         );
 
     color:
-        var(--pkfz-dark-blue);
+        var(--dark-blue);
 }
 
 
-/* =========================================================
-   FOOTER COUNTRY
-========================================================= */
-
 .footer-country {
 
-    margin-top: 8px;
+    margin-top: 7px;
 
     font-size:
         clamp(
@@ -1023,10 +988,6 @@ body {
 }
 
 
-/* =========================================================
-   FOOTER LINE
-========================================================= */
-
 .footer-line {
 
     width: 70%;
@@ -1037,6 +998,7 @@ body {
         13px auto;
 
     background:
+
         linear-gradient(
             90deg,
             transparent,
@@ -1045,10 +1007,6 @@ body {
         );
 }
 
-
-/* =========================================================
-   FOOTER VALUES
-========================================================= */
 
 .footer-values {
 
@@ -1093,22 +1051,21 @@ body {
 
 /* =========================================================
    SMALL PHONES
-   320px – 374px
+   320px - 374px
 ========================================================= */
 
 @media (max-width: 374px) {
 
     body {
 
-        padding:
-            8px;
+        padding: 7px;
     }
 
 
     .business-card {
 
         padding:
-            24px 13px 20px;
+            22px 12px 20px;
 
         border-radius:
             20px;
@@ -1123,21 +1080,19 @@ body {
 
     .pkfz-logo {
 
-        width:
-            120px;
+        width: 125px;
+
+        max-height: 65px;
     }
 
 
     .company-tagline {
 
-        font-size:
-            7px;
+        font-size: 6px;
 
-        letter-spacing:
-            1px;
+        letter-spacing: 1px;
 
-        padding-left:
-            8px;
+        padding-left: 7px;
     }
 
 
@@ -1149,86 +1104,82 @@ body {
 
     .personal-information h1 {
 
-        font-size:
-            19px;
+        font-size: 19px;
     }
 
 
     .department {
 
-        font-size:
-            10px;
+        font-size: 10px;
 
         padding:
-            6px 10px;
+            6px 9px;
     }
 
 
     .contact-item {
 
-        min-height:
-            58px;
+        min-height: 58px;
     }
 
 
     .contact-content span {
 
-        font-size:
-            10px;
+        font-size: 10px;
     }
 
 
     .footer-values {
 
-        gap:
-            5px;
+        gap: 5px;
 
-        letter-spacing:
-            0.5px;
+        letter-spacing: 0.5px;
     }
 }
 
 
 /* =========================================================
-   STANDARD PHONES
-   375px – 600px
+   NORMAL SMARTPHONES
+   375px - 600px
 ========================================================= */
 
 @media (min-width: 375px) and (max-width: 600px) {
 
     .business-card {
 
-        max-width:
-            500px;
+        max-width: 500px;
+    }
+
+
+    .pkfz-logo {
+
+        width: 145px;
     }
 }
 
 
 /* =========================================================
    TABLETS
-   601px – 1024px
+   601px - 1024px
 ========================================================= */
 
 @media (min-width: 601px) and (max-width: 1024px) {
 
     body {
 
-        padding:
-            30px;
+        padding: 30px;
     }
 
 
     .business-card {
 
-        max-width:
-            600px;
+        max-width: 600px;
     }
 
 
     .pkfz-logo {
 
-        width:
-            200px;
+        width: 190px;
     }
 }
 
@@ -1242,36 +1193,13 @@ body {
 
     .business-card {
 
-        max-width:
-            620px;
-    }
-
-
-    .contact-item:hover {
-
-        transform:
-            translateY(-4px);
+        max-width: 620px;
     }
 }
 
 
 /* =========================================================
-   VERY LARGE SCREENS
-   1600px+
-========================================================= */
-
-@media (min-width: 1600px) {
-
-    .business-card {
-
-        max-width:
-            650px;
-    }
-}
-
-
-/* =========================================================
-   LANDSCAPE PHONES
+   LANDSCAPE MOBILE
 ========================================================= */
 
 @media
@@ -1283,45 +1211,32 @@ body {
         align-items:
             flex-start;
 
-        padding-top:
-            15px;
+        padding-top: 15px;
 
-        padding-bottom:
-            15px;
+        padding-bottom: 15px;
     }
 
 
     .business-card {
 
-        max-width:
-            650px;
+        max-width: 650px;
 
         padding:
             20px 30px;
     }
 
 
-    .profile-section {
-
-        margin-bottom:
-            15px;
-    }
-
-
     .profile-ring {
 
-        width:
-            130px;
+        width: 130px;
 
-        height:
-            130px;
+        height: 130px;
     }
 
 
     .logistics-text {
 
-        display:
-            none;
+        display: none;
     }
 }
 
@@ -1348,21 +1263,12 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
 
-    html {
-
-        scroll-behavior:
-            auto;
-    }
-
-
     *,
     *::before,
     *::after {
 
-        transition:
-            none !important;
+        transition: none !important;
 
-        animation:
-            none !important;
+        animation: none !important;
     }
 }
