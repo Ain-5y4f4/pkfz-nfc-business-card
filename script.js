@@ -1,70 +1,101 @@
-/* =========================================
-   DIGITAL BUSINESS CARD
-   Noor Syakira Binti Muhd Anuar
-========================================= */
+/* =========================================================
+   PKFZ DIGITAL BUSINESS CARD
+   CONTACT FUNCTION
+========================================================= */
 
 
-/* =========================================
+/* =========================================================
    SAVE CONTACT
-========================================= */
+========================================================= */
 
 function saveContact() {
 
-    const contact = [
+    const vCard = [
         "BEGIN:VCARD",
         "VERSION:3.0",
+
         "FN:Noor Syakira Binti Muhd Anuar",
+
         "N:Noor Syakira Binti Muhd Anuar;;;;",
-        "ORG:PKFZ",
+
+        "ORG:Port Klang Free Zone (PKFZ)",
+
         "TITLE:Executive",
+
         "ROLE:Sales & Marketing Department",
+
         "TEL;TYPE=CELL:+60189744486",
+
         "TEL;TYPE=WORK:+60331015568",
+
         "EMAIL;TYPE=WORK:syakira@pkfz.com",
+
+        "URL:https://ain-5y4f4.github.io/pkfz-nfc-business-card/",
+
+        "NOTE:Sales & Marketing Department",
+
         "END:VCARD"
     ].join("\r\n");
 
 
     const blob = new Blob(
-        [contact],
+        [vCard],
         {
             type: "text/vcard;charset=utf-8"
         }
     );
 
 
-    const url = URL.createObjectURL(blob);
+    const url =
+        URL.createObjectURL(blob);
 
 
-    const link = document.createElement("a");
+    const downloadLink =
+        document.createElement("a");
 
-    link.href = url;
 
-    link.download =
+    downloadLink.href = url;
+
+
+    downloadLink.download =
         "Noor-Syakira-Binti-Muhd-Anuar.vcf";
 
 
-    document.body.appendChild(link);
-
-    link.click();
-
-    document.body.removeChild(link);
+    document.body.appendChild(
+        downloadLink
+    );
 
 
-    URL.revokeObjectURL(url);
+    downloadLink.click();
+
+
+    document.body.removeChild(
+        downloadLink
+    );
+
+
+    setTimeout(
+        function () {
+
+            URL.revokeObjectURL(url);
+
+        },
+        1000
+    );
+
 }
 
 
-/* =========================================
-   PAGE LOADED
-========================================= */
+/* =========================================================
+   PAGE LOAD
+========================================================= */
 
 document.addEventListener(
     "DOMContentLoaded",
     function () {
 
         console.log(
-            "Digital Business Card loaded successfully."
+            "PKFZ Digital Business Card loaded."
         );
 
     }
