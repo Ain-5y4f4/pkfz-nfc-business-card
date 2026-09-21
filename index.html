@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color"
+          content="#071d3b">
+
+    <meta name="description"
+          content="Digital Business Card - Noor Syakira Binti Muhd Anuar">
+
+    <title>
+        Noor Syakira Binti Muhd Anuar | PKFZ
+    </title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html,
+        body {
+
+            margin: 0;
+            padding: 0;
+
+            width: 100%;
+            min-height: 100%;
+
+            background: #ffffff;
+
+        }
+
+
+        body {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: flex-start;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+        }
+
+
+        /*
+        MAIN CARD
+
+        The original image is used as the
+        complete visual design.
+
+        Nothing is placed visually on top
+        of the artwork.
+        */
+
+        .card {
+
+            position: relative;
+
+            width: min(100vw, 1199px);
+
+            line-height: 0;
+
+        }
+
+
+        .card img {
+
+            display: block;
+
+            width: 100%;
+
+            height: auto;
+
+            user-select: none;
+
+            -webkit-user-drag: none;
+
+        }
+
+
+        /*
+        INVISIBLE CLICKABLE AREAS
+
+        These areas sit above the original
+        image.
+
+        They do NOT change the design.
+        */
+
+
+        .hotspot {
+
+            position: absolute;
+
+            display: block;
+
+            z-index: 10;
+
+            background: transparent;
+
+            border: none;
+
+            padding: 0;
+
+            margin: 0;
+
+            cursor: pointer;
+
+            text-decoration: none;
+
+            line-height: normal;
+
+        }
+
+
+        /*
+        KEYBOARD ACCESSIBILITY
+        */
+
+        .hotspot:focus-visible {
+
+            outline:
+                2px solid
+                rgba(45, 220, 220, 0.9);
+
+            outline-offset: 3px;
+
+            border-radius: 8px;
+
+        }
+
+
+        /*
+        ============================
+        MAIN CONTACT INFORMATION
+        ============================
+        */
+
+
+        /* Email */
+
+        .email-main {
+
+            left: 42%;
+
+            top: 32.8%;
+
+            width: 30%;
+
+            height: 5.2%;
+
+        }
+
+
+        /* Mobile */
+
+        .mobile-main {
+
+            left: 42%;
+
+            top: 39.1%;
+
+            width: 30%;
+
+            height: 5.2%;
+
+        }
+
+
+        /* Office */
+
+        .office-main {
+
+            left: 42%;
+
+            top: 45.3%;
+
+            width: 30%;
+
+            height: 5.2%;
+
+        }
+
+
+        /*
+        Save Contact area
+        */
+
+        .save-contact {
+
+            left: 77%;
+
+            top: 30%;
+
+            width: 19%;
+
+            height: 22%;
+
+        }
+
+
+        /*
+        ============================
+        BOTTOM ICONS
+        ============================
+        */
+
+
+        /* Email */
+
+        .bottom-email {
+
+            left: 3%;
+
+            top: 75.5%;
+
+            width: 13%;
+
+            height: 14%;
+
+        }
+
+
+        /* Phone */
+
+        .bottom-phone {
+
+            left: 20%;
+
+            top: 75.5%;
+
+            width: 13%;
+
+            height: 14%;
+
+        }
+
+
+        /* WhatsApp */
+
+        .bottom-wa {
+
+            left: 36%;
+
+            top: 75.5%;
+
+            width: 13%;
+
+            height: 14%;
+
+        }
+
+
+        /* Google Maps */
+
+        .bottom-map {
+
+            left: 52%;
+
+            top: 75.5%;
+
+            width: 13%;
+
+            height: 14%;
+
+        }
+
+
+        /* LinkedIn */
+
+        .bottom-linkedin {
+
+            left: 67%;
+
+            top: 75.5%;
+
+            width: 13%;
+
+            height: 14%;
+
+        }
+
+
+        /* Website */
+
+        .bottom-website {
+
+            left: 84%;
+
+            top: 75.5%;
+
+            width: 13%;
+
+            height: 14%;
+
+        }
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <main class="card">
+
+
+        <!--
+
+        EXACT BUSINESS CARD IMAGE
+
+        Put business-card.png in the
+        SAME GitHub folder as index.html.
+
+        -->
+
+
+        <img
+
+            src="business-card.png"
+
+            alt="Noor Syakira Binti Muhd Anuar Digital Business Card"
+
+        >
+
+
+        <!--
+        ==================================
+        MAIN EMAIL
+        ==================================
+        -->
+
+        <a
+
+            class="hotspot email-main"
+
+            href="mailto:syakira@pkfz.com"
+
+            aria-label="Email Noor Syakira"
+
+        ></a>
+
+
+        <!--
+        ==================================
+        MOBILE PHONE
+        ==================================
+        -->
+
+        <a
+
+            class="hotspot mobile-main"
+
+            href="tel:+60189744486"
+
+            aria-label="Call Noor Syakira"
+
+        ></a>
+
+
+        <!--
+        ==================================
+        OFFICE PHONE
+        ==================================
+        -->
+
+        <a
+
+            class="hotspot office-main"
+
+            href="tel:+60331015568"
+
+            aria-label="Call office"
+
+        ></a>
+
+
+        <!--
+        ==================================
+        SAVE CONTACT
+        ==================================
+        -->
+
+        <button
+
+            class="hotspot save-contact"
+
+            type="button"
+
+            onclick="saveContact()"
+
+            aria-label="Save contact"
+
+        ></button>
+
+
+        <!--
+        ==================================
+        BOTTOM EMAIL
+        ==================================
+        -->
+
+        <a
+
+            class="hotspot bottom-email"
+
+            href="mailto:syakira@pkfz.com"
+
+            aria-label="Email"
+
+        ></a>
+
+
+        <!--
+        ==================================
+        BOTTOM PHONE
+        ==================================
+        -->
+
+        <a
+
+            class="hotspot bottom-phone"
+
+            href="tel:+60189744486"
+
+            aria-label="Phone"
+
+        ></a>
+
+
+        <!--
+        ==================================
+        WHATSAPP
+        ==================================
+        -->
+
+        <a
+
+            class="hotspot bottom-wa"
+
+            href="https://wa.me/60189744486"
+
+            target="_blank"
+
+            rel="noopener noreferrer"
+
+            aria-label="WhatsApp"
+
+        ></a>
+
+
+        <!--
+        ==================================
+        GOOGLE MAPS
+        ==================================
+        -->
+
+        <a
+
+            class="hotspot bottom-map"
+
+            href="https://www.google.com/maps/search/?api=1&query=Port+Klang+Free+Zone+Selangor+Malaysia"
+
+            target="_blank"
+
+            rel="noopener noreferrer"
+
+            aria-label="Find PKFZ"
+
+        ></a>
+
+
+        <!--
+        ==================================
+        LINKEDIN
+        ==================================
+
+        Replace the URL below with
+        Noor Syakira's actual LinkedIn
+        profile.
+        -->
+
+        <a
+
+            class="hotspot bottom-linkedin"
+
+            href="https://www.linkedin.com/"
+
+            target="_blank"
+
+            rel="noopener noreferrer"
+
+            aria-label="LinkedIn"
+
+        ></a>
+
+
+        <!--
+        ==================================
+        WEBSITE
+        ==================================
+
+        Replace this if PKFZ has another
+        official website URL.
+        -->
+
+        <a
+
+            class="hotspot bottom-website"
+
+            href="https://pkfz.com/"
+
+            target="_blank"
+
+            rel="noopener noreferrer"
+
+            aria-label="PKFZ Website"
+
+        ></a>
+
+
+    </main>
+
+
+    <!--
+    =====================================
+    SAVE CONTACT FUNCTION
+    =====================================
+    -->
+
+    <script>
+
+
+        function saveContact() {
+
+
+            const vcard =
+
+`BEGIN:VCARD
+VERSION:3.0
+N:Anuar;Noor Syakira Binti Muhd;;;
+FN:Noor Syakira Binti Muhd Anuar
+ORG:Port Klang Free Zone (PKFZ)
+TITLE:Executive
+DEPARTMENT:Sales & Marketing Department
+EMAIL;TYPE=WORK:syakira@pkfz.com
+TEL;TYPE=CELL:+60189744486
+TEL;TYPE=WORK:+60331015568
+ADR;TYPE=WORK:;;Port Klang Free Zone;Klang;Selangor;;Malaysia
+URL:https://pkfz.com/
+END:VCARD`;
+
+
+            const blob = new Blob(
+
+                [vcard],
+
+                {
+                    type:
+                        "text/vcard;charset=utf-8"
+                }
+
+            );
+
+
+            const url =
+                URL.createObjectURL(blob);
+
+
+            const link =
+                document.createElement("a");
+
+
+            link.href = url;
+
+
+            link.download =
+                "Noor_Syakira_Binti_Muhd_Anuar.vcf";
+
+
+            document.body.appendChild(link);
+
+
+            link.click();
+
+
+            document.body.removeChild(link);
+
+
+            URL.revokeObjectURL(url);
+
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
